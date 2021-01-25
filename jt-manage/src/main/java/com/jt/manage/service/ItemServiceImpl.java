@@ -1,0 +1,32 @@
+package com.jt.manage.service;
+
+import com.jt.common.po.Item;
+import com.jt.manage.mapper.ItemMapper;
+import com.jt.manage.vo.EasyUI_Data;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * @author wangning
+ * @create 2021-01-24 15:31
+ */
+@Service
+public class ItemServiceImpl implements ItemService {
+	@Autowired
+	private ItemMapper itemMapper;
+
+	@Override
+	public EasyUI_Data findItemByPage(Integer page, Integer rows) {
+		int total = itemMapper.findCount();//商品记录总数
+		int start = (page - 1)*rows;
+		List<Item> itemList = itemMapper.findItemByPage(start,rows); //分页后查询结果
+		return new EasyUI_Data(total, itemList);
+	}
+
+	@Override
+	public String findItemCatNameById(Long itemId) {
+		return itemMapper.findItemCatNameById(itemId);
+	}
+}
