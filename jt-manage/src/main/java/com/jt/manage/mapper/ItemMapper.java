@@ -1,5 +1,6 @@
 package com.jt.manage.mapper;
 
+import com.jt.common.mapper.SysMapper;
 import com.jt.common.po.Item;
 import com.jt.manage.vo.EasyUI_Data;
 import org.apache.ibatis.annotations.Param;
@@ -11,7 +12,8 @@ import java.util.List;
  * @author wangning
  * @create 2021-01-24 15:30
  */
-public interface ItemMapper {
+public interface ItemMapper extends SysMapper<Item> {
+	
 	@Select("select count(*) from tb_item")
 	int findCount();
 

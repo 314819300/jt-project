@@ -32,7 +32,7 @@ public class IndexController {
 	 */
 	@RequestMapping("/page/{moduleName}")
 	public String item(@PathVariable String moduleName) {
-		System.out.println("moduleName = " + moduleName);
+//		System.out.println("moduleName = " + moduleName);
 		return moduleName;
 	}
 

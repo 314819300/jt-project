@@ -1,22 +1,30 @@
 package com.jt.common.po;
 
+import javax.persistence.*;
+
 /**
  * @author wangning
  * @create 2021-01-24 15:04
  */
+@Table(name = "tb_item")
 public class Item extends BasePojo{
 	private static final long serialVersionUID = -9219915256526652056L;
 	/**
 	 * 标题id
 	 */
+	@Id		//定义主键	//主键自增
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;//bigint(10) not null auto_increment comment '商品ID，也是商品编号',
 	/**
 	 * 标题元素
 	 */
+//	@Column(name = "title")
 	private String title;//varchar(100),
 	/**
 	 * 卖点信息
 	 */
+	//自定义映射字段
+//	@Column(name = "sell_point")//由于开启了驼峰映射，正常情况下就不需要这样写了，如果有特殊特殊要求，才需要加
 	private String sellPoint;//varchar(150),
 	/**
 	 * 价格

@@ -21,17 +21,21 @@
         前一种扫描后会放在一个集合中，取值需要用到#{}
         而第二种是直接放到容器中，直接去key值就可以，使用${}取值
     -->
-<!--    <util:properties id="" location="classpath:/properties/jdbc.properties"/>-->
+    <!--
+        <util:properties id="" location="classpath:/properties/jdbc.properties"/>
+        使用这种方式的话，如果properties文件中的格式是user.name=tom，则会取不到值，因为使用，
+        util这种方式读取文件，不能识别文件中的 .
+    -->
     <context:property-placeholder location="classpath:/properties/*.properties"/>
     <!--2.2 配置druid数据源
         #{集合Id.key}   先从容器中获取到集合，然后从集合中取值
         ${key}          从容器中直接取值
     -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="driverClassName" value="${jdbc.driver}" />
-        <property name="url" value="${jdbc.url}" />
-        <property name="username" value="${jdbc.username}" />
-        <property name="password" value="${jdbc.password}" />
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
     </bean>
 
     <!--3 事务控制-->
@@ -78,6 +82,6 @@
         <aop:pointcut id="pc" expression="execution(* com.jt.manage.service..*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pc"></aop:advisor>
         <!--自定义切面-->
-<!--        <aop:aspect id="" ref=""></aop:aspect>-->
+        <!--        <aop:aspect id="" ref=""></aop:aspect>-->
     </aop:config>
 </beans>
