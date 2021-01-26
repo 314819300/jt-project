@@ -1,5 +1,6 @@
 package com.jt.manage.service;
 
+import com.jt.common.po.Item;
 import com.jt.manage.vo.EasyUI_Data;
 
 /**
@@ -11,4 +12,10 @@ public interface ItemService {
 	EasyUI_Data findItemByPage(Integer page, Integer rows);
 
 	String findItemCatNameById(Long itemId);
+
+	void saveItem(Item item);
+
+	void updateItem(Item item);
+
+	void updateStatus(Long[] ids, int status);
 }

@@ -1,7 +1,10 @@
 package com.jt.manage.controller;
 
+import com.jt.common.po.Item;
+import com.jt.common.vo.SysResult;
 import com.jt.manage.service.ItemService;
 import com.jt.manage.vo.EasyUI_Data;
+import org.springframework.amqp.rabbit.support.PublisherCallbackChannelImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,5 +50,71 @@ public class ItemController {
 //		response.setCharacterEncoding("utf-8");
 		return itemService.findItemCatNameById(itemId);
 
+	}
+
+	@RequestMapping("/save")
+	@ResponseBody
+	public SysResult saveItem(Item item) {
+
+		try {
+			itemService.saveItem(item);
+			return SysResult.oK();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return SysResult.build(201, "商品新增失败！");
+	}
+
+	/**
+	 * 商品的更新
+	 * @param item
+	 * @return
+	 */
+	@RequestMapping("/update")
+	@ResponseBody
+	public SysResult updateItem(Item item) {
+		try {
+			itemService.updateItem(item);
+			return SysResult.oK();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return SysResult.build(201, "商品修改失败！");
+	}
+
+	/**
+	 * 商品的下架
+	 * @return
+	 */
+	@RequestMapping("/instock")
+	@ResponseBody
+	public SysResult instockItem(Long[] ids) {
+		try {
+			int status = 2;//下架
+//			Long s = ids.split(",");因为springmvc底层已经把前端送的串拆分成数组了，所以我们可以直接使用
+			itemService.updateStatus(ids, status);
+			return SysResult.oK();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return SysResult.build(201, "商品下架失败！");
+	}
+
+	/**
+	 * 商品的下架
+	 * @return
+	 */
+	@RequestMapping("/reshelf")
+	@ResponseBody
+	public SysResult reshelfItem(Long[] ids) {
+		try {
+			int status = 1;//下架
+//			Long s = ids.split(",");因为springmvc底层已经把前端送的串拆分成数组了，所以我们可以直接使用
+			itemService.updateStatus(ids, status);
+			return SysResult.oK();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return SysResult.build(201, "商品下架失败！");
 	}
 }

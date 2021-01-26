@@ -6,6 +6,7 @@ import com.jt.manage.vo.EasyUI_Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,4 +32,30 @@ public class ItemServiceImpl implements ItemService {
 	public String findItemCatNameById(Long itemId) {
 		return itemMapper.findItemCatNameById(itemId);
 	}
+
+	@Override
+	public void saveItem(Item item) {
+		item.setStatus(1);//商品正常
+		item.setCreated(new Date());
+		item.setUpdated(item.getCreated());
+		//使用通用mapper实现入库的操作
+		itemMapper.insert(item);
+	}
+
+	/**
+	 * 商品更新
+	 * @param item
+	 */
+	@Override
+	public void updateItem(Item item) {
+		item.setUpdated(new Date());
+		itemMapper.updateByPrimaryKeySelective(item);
+	}
+
+	@Override
+	public void updateStatus(Long[] ids, int status) {
+		itemMapper.updateStatus(ids, status);
+	}
+
+
 }

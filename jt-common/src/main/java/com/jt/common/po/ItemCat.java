@@ -19,7 +19,7 @@ public class ItemCat extends BasePojo {
 	private String name;		//分类名称
 	private Integer status;		//默认值为1，可选值：1正常，2删除'
 	private Integer sortOrder;	//排序号
-	private Boolean isParent;	//是否为父级
+	private Boolean isParent;	//是否为父级 true closed  false open
 
 	public Long getId() {
 		return id;
@@ -61,13 +61,14 @@ public class ItemCat extends BasePojo {
 		this.sortOrder = sortOrder;
 	}
 
-	public Boolean getParent() {
+	public Boolean getIsParent() {
 		return isParent;
 	}
 
-	public void setParent(Boolean parent) {
+	public void setIsParent(Boolean parent) {
 		isParent = parent;
 	}
+
 
 	public ItemCat() {}
 

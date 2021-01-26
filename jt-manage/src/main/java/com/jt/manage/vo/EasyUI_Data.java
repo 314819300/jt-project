@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * @author wangning
  * @create 2021-01-24 15:37
+ * 封装商品查询展示信息VO
  */
 public class EasyUI_Data implements Serializable {
 	private static final long serialVersionUID = 1553483981441213873L;

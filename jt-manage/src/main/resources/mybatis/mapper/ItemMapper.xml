@@ -13,4 +13,16 @@
         select * from tb_item order by updated desc limit #{start}, #{rows}
 
     </select>
+
+    <!--    <update id="updateStatus">-->
+    <!--        update tb_item set status = #{status}, updated = now()-->
+    <!--        where id in-->
+    <!--        <foreach collection="ids" separator="," item="item" open="(" close=")">#{item}</foreach>-->
+    <!--    </update>-->
+    <update id="updateStatus">
+        update tb_item set status = #{status}, updated = now()
+        where id in (
+            <foreach collection="ids" separator="," item="item">#{item}</foreach>
+        )
+    </update>
 </mapper>

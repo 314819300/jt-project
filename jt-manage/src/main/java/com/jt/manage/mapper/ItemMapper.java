@@ -28,4 +28,6 @@ public interface ItemMapper extends SysMapper<Item> {
 
 	@Select("select name from tb_item_cat where id = #{itemId}")
 	String findItemCatNameById(Long itemId);
+
+	void updateStatus(@Param("ids") Long[] ids, @Param("status") int status);
 }
