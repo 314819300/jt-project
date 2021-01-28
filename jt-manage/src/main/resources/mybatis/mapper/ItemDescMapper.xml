@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace:
+    1.必须与接口的路径匹配
+    2.名字必须唯一，否则启动报错
+    3.sql语句必须和接口方法保持一致
+-->
+<mapper namespace="com.jt.manage.mapper.ItemDescMapper">
+
+
+</mapper>

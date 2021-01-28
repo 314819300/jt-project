@@ -1,12 +1,14 @@
 package com.jt.manage.controller;
 
 import com.jt.common.po.Item;
+import com.jt.common.po.ItemDesc;
 import com.jt.common.vo.SysResult;
 import com.jt.manage.service.ItemService;
 import com.jt.manage.vo.EasyUI_Data;
 import org.springframework.amqp.rabbit.support.PublisherCallbackChannelImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -54,10 +56,10 @@ public class ItemController {
 
 	@RequestMapping("/save")
 	@ResponseBody
-	public SysResult saveItem(Item item) {
+	public SysResult saveItem(Item item, String desc) {
 
 		try {
-			itemService.saveItem(item);
+			itemService.saveItem(item, desc);
 			return SysResult.oK();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -72,9 +74,9 @@ public class ItemController {
 	 */
 	@RequestMapping("/update")
 	@ResponseBody
-	public SysResult updateItem(Item item) {
+	public SysResult updateItem(Item item, String desc) {
 		try {
-			itemService.updateItem(item);
+			itemService.updateItem(item, desc);
 			return SysResult.oK();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -116,5 +118,18 @@ public class ItemController {
 			e.printStackTrace();
 		}
 		return SysResult.build(201, "商品下架失败！");
+	}
+
+	//实现商品详情的展现
+	@RequestMapping("/query/item/desc/{itemId}")
+	@ResponseBody
+	public SysResult findItemDescById(@PathVariable Long itemId) {
+		try {
+			ItemDesc itemDesc = itemService.findItemDescById(itemId);
+			return SysResult.oK(itemDesc);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return SysResult.build(201, "查询详情信息失败");
 	}
 }
