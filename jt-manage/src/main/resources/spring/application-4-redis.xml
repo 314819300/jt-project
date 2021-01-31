@@ -11,7 +11,10 @@
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
-    <!--1.spring整合单台的redis-->
+    <!--定义对象与JSON转化的工具类-->
+    <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper"/>
+
+    <!--1.spring整合单台的redis，如果使用自动注入就可以，不用每次new-->
     <bean id="jedis" class="redis.clients.jedis.Jedis">
         <constructor-arg name="host" value="${redis.host}"/>
         <constructor-arg name="port" value="${redis.port}"/>

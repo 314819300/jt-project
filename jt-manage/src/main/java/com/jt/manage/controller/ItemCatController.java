@@ -35,7 +35,8 @@ public class ItemCatController {
 	@ResponseBody
 	public List<EasyUI_Tree> findTree(@RequestParam(value = "id",defaultValue = "0") Long parentId) {
 		//展现一级信息列表
-		return itemCatService.findTree(parentId);
+//		return itemCatService.findTree(parentId);
+		return itemCatService.findTreeCache(parentId);
 	}
 
 
