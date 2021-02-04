@@ -2,12 +2,15 @@ package com.jt.manage.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jt.common.po.ItemCat;
+import com.jt.common.service.RedisService;
 import com.jt.manage.mapper.ItemCatMapper;
 import com.jt.manage.vo.EasyUI_Tree;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisCluster;
+import redis.clients.jedis.ShardedJedis;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +26,10 @@ public class ItemCatServiceImpl implements ItemCatService {
 	private ItemCatMapper itemCatMapper;
 
 	@Autowired
-	private Jedis jedis;
+//	private Jedis jedis;
+//	private ShardedJedis jedis;
+//	private RedisService redisService;
+	private JedisCluster jedisCluster;
 
 	@Autowired
 	private ObjectMapper objectMapper;
@@ -64,14 +70,14 @@ public class ItemCatServiceImpl implements ItemCatService {
 		//此处我们为什么不用parentId作为key呢，应为避免有其它的key值相同会造成冲突
 		//所以我们最好加一些前缀
 		String key = "ITEM_CAT_" + parentId;
-		String json = jedis.get(key);
+		String json = jedisCluster.get(key);
 		List<EasyUI_Tree> treeList = new ArrayList<>();
 		try {
 			if(StringUtils.isEmpty(json)) {
 				System.out.println("用户查询数据库！！！");
 				treeList = findTree(parentId);
 				String listJSON = objectMapper.writeValueAsString(treeList);
-				jedis.set(key, listJSON);
+				jedisCluster.set(key, listJSON);
 			} else {
 				System.out.println("用户查询缓存！！！");
 				treeList = objectMapper.readValue(json, treeList.getClass());
