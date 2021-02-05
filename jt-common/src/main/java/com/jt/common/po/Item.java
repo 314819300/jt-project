@@ -1,5 +1,7 @@
 package com.jt.common.po;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 /**
@@ -7,6 +9,8 @@ import javax.persistence.*;
  * @create 2021-01-24 15:04
  */
 @Table(name = "tb_item")
+//进行JSON转化是，忽略未知属性
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Item extends BasePojo{
 	private static final long serialVersionUID = -9219915256526652056L;
 	/**
@@ -58,6 +62,17 @@ public class Item extends BasePojo{
 	 * 修改时间
 	 */
 //	private Date updated;//datetime comment '列表排序时按修改时间排序，所以在新增时需要设置此值。',
+
+	/**
+	 * 由于前台需要通过get方法获取第一张图片信息
+	 * 手动添加一个get方法
+	 *
+	 * 说明：一会测试还会出错
+	 * @return
+	 */
+	public String[] getImages() {
+		return image.split(",");
+	}
 
 	public Long getId() {
 		return id;

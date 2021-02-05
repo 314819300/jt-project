@@ -75,5 +75,15 @@ public class ItemServiceImpl implements ItemService {
 		return itemDescMapper.selectByPrimaryKey(itemId);
 	}
 
+	/**
+	 * 根据id查询商品详细信息
+	 * @param itemId
+	 * @return
+	 */
+	@Override
+	public Item findItemById(Long itemId) {
+		return itemMapper.selectByPrimaryKey(itemId);
+	}
+
 
 }

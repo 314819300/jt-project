@@ -1,0 +1,83 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <!--定义对象与JSON转化的工具类-->
+    <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper"/>
+
+    <!--1.spring整合单台的redis，如果使用自动注入就可以，不用每次new-->
+<!--    <bean id="jedis" class="redis.clients.jedis.Jedis">-->
+<!--        <constructor-arg name="host" value="${redis.host}"/>-->
+<!--        <constructor-arg name="port" value="${redis.port}"/>-->
+<!--    </bean>-->
+
+    <!--2.spring整合redis分片(此方法工作中不用，只是为了学习其中的思想)
+        因为为了实现高可用，我们不需要知道redis的主从关系，有多少台，
+        我们只需要连接哨兵就可以了
+    -->
+<!--    <bean id="shard1" class="redis.clients.jedis.JedisShardInfo">-->
+<!--        <constructor-arg name="host" value="${redis.host}"/>-->
+<!--        <constructor-arg name="port" value="${redis.port1}"/>-->
+<!--    </bean>-->
+<!--    <bean id="shard2" class="redis.clients.jedis.JedisShardInfo">-->
+<!--        <constructor-arg name="host" value="${redis.host}"/>-->
+<!--        <constructor-arg name="port" value="${redis.port2}"/>-->
+<!--    </bean>-->
+<!--    <bean id="shard3" class="redis.clients.jedis.JedisShardInfo">-->
+<!--        <constructor-arg name="host" value="${redis.host}"/>-->
+<!--        <constructor-arg name="port" value="${redis.port3}"/>-->
+<!--    </bean>-->
+<!--    <bean id="shardedJedis" class="redis.clients.jedis.ShardedJedis">-->
+<!--        <constructor-arg name="shards">-->
+<!--            &lt;!&ndash;<list></list>-->
+<!--            <map></map>-->
+<!--            <array></array>-->
+<!--            <set></set>-->
+<!--            <props></props>&ndash;&gt;-->
+<!--            <list>-->
+<!--                &lt;!&ndash;<value/> list中存在的value或者ref&ndash;&gt;-->
+<!--                <ref bean="shard1"/>-->
+<!--                <ref bean="shard2"/>-->
+<!--                <ref bean="shard3"/>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+    <!--3.spring整合sentinel哨兵
+    -->
+<!--    <bean id="jedisSentinelPool" class="redis.clients.jedis.JedisSentinelPool">-->
+<!--        <constructor-arg name="masterName" value="${redis.masterName}"/>-->
+<!--        <constructor-arg name="sentinels">-->
+<!--            <set>-->
+<!--                <value>${redis.sentinel}</value>-->
+<!--            </set>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+    <!--4.编辑集群的配置-->
+    <!--4.1如果有用以下方式写，需要写9个节点，然后在分别引入，这种会很麻烦,所以我们不用这种写法-->
+<!--    <bean id="node1" class="redis.clients.jedis.HostAndPort">-->
+<!--        <constructor-arg name="host" value="${redis.host}"/>-->
+<!--        <constructor-arg name="port" value="7000"/>-->
+<!--    </bean>-->
+<!--    <bean id="jedisCluster111" class="redis.clients.jedis.JedisCluster">-->
+<!--      <constructor-arg name="nodes">-->
+<!--          <set>-->
+<!--              <ref bean="node1"/>-->
+<!--          </set>-->
+<!--      </constructor-arg>-->
+<!--    </bean>-->
+
+    <!--5.引入spring工厂，创建jedisCluster-->
+    <bean id="jedisCluster" class="com.jt.common.factory.JedisClusterFactory"></bean>
+
+</beans>

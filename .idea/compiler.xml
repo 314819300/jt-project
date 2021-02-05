@@ -8,6 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jt-manage" />
+        <module name="jt-web" />
+        <module name="springboot-1-hello" />
         <module name="jt-common" />
       </profile>
     </annotationProcessing>
@@ -15,6 +17,13 @@
       <module name="jt-common" target="1.8" />
       <module name="jt-manage" target="1.8" />
       <module name="jt-parent" target="1.8" />
+      <module name="jt-web" target="1.8" />
+      <module name="springboot-1-hello" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-1-hello" options="-parameters" />
+    </option>
   </component>
 </project>

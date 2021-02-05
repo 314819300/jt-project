@@ -3,6 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/j" />
     <file type="web" url="file://$PROJECT_DIR$/jt-manage" />
+    <file type="web" url="file://$PROJECT_DIR$/jt-web" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -10,6 +11,8 @@
         <option value="$PROJECT_DIR$/jt-parent/pom.xml" />
         <option value="$PROJECT_DIR$/jt-common/pom.xml" />
         <option value="$PROJECT_DIR$/jt-manage/pom.xml" />
+        <option value="$PROJECT_DIR$/jt-web/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-1-hello/pom.xml" />
       </list>
     </option>
   </component>
