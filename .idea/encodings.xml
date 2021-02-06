@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/springboot-1-hello/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-2-mybatis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-2-mybatis/src/main/resources/application.yaml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-3-jpa/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

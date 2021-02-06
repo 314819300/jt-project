@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/springboot-1-hello/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-2-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/jt-sso/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-3-jpa/pom.xml" />
       </list>
     </option>
   </component>
