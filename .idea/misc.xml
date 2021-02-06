@@ -13,6 +13,8 @@
         <option value="$PROJECT_DIR$/jt-manage/pom.xml" />
         <option value="$PROJECT_DIR$/jt-web/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-1-hello/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-2-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/jt-sso/pom.xml" />
       </list>
     </option>
   </component>

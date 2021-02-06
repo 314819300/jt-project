@@ -2,15 +2,12 @@ package com.jt.manage.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jt.common.po.ItemCat;
-import com.jt.common.service.RedisService;
 import com.jt.manage.mapper.ItemCatMapper;
 import com.jt.manage.vo.EasyUI_Tree;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisCluster;
-import redis.clients.jedis.ShardedJedis;
 
 import java.util.ArrayList;
 import java.util.List;

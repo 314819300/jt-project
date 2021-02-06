@@ -5,8 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/jt-common/jt-common.iml" filepath="$PROJECT_DIR$/jt-common/jt-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/jt-manage/jt-manage.iml" filepath="$PROJECT_DIR$/jt-manage/jt-manage.iml" />
       <module fileurl="file://$PROJECT_DIR$/jt-parent/jt-parent.iml" filepath="$PROJECT_DIR$/jt-parent/jt-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jt-sso/jt-sso.iml" filepath="$PROJECT_DIR$/jt-sso/jt-sso.iml" />
       <module fileurl="file://$PROJECT_DIR$/jt-web/jt-web.iml" filepath="$PROJECT_DIR$/jt-web/jt-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-1-hello/springboot-1-hello.iml" filepath="$PROJECT_DIR$/springboot-1-hello/springboot-1-hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-2-mybatis/springboot-2-mybatis.iml" filepath="$PROJECT_DIR$/springboot-2-mybatis/springboot-2-mybatis.iml" />
     </modules>
   </component>
 </project>

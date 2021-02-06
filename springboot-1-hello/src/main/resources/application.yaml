@@ -1,0 +1,36 @@
+#yaml/yml语法： 1.配置时注意缩进 2.：号之后必须跟空格
+#配置醒目的热部署
+#定义用户默认的连接环境
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8094  #定义项目端口
+  servlet:
+    context-path: /jt
+
+user:
+  id: 1001
+  username: 元宵节
+  age: 10
+
+#环境的切换
+#定义环境的名称
+spring:
+  profiles: prod
+---     #环境的分割线
+server:
+  port: 8095  #定义项目端口
+  servlet:
+    context-path: /
+
+user:
+  id: 1000
+  username: 元宵节
+  age: 108
+spring:
+  profiles: dev
+
+
+
