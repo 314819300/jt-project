@@ -1,4 +1,4 @@
-package com.jt.sso.vo;
+package com.jt.cart.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;

@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jt-manage" />
         <module name="springboot-3-jpa" />
+        <module name="jt-cart" />
         <module name="jt-sso" />
         <module name="springboot-2-mybatis" />
         <module name="jt-web" />
@@ -17,6 +18,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="jt-cart" target="1.8" />
       <module name="jt-common" target="1.8" />
       <module name="jt-manage" target="1.8" />
       <module name="jt-parent" target="1.8" />
@@ -29,6 +31,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="jt-cart" options="-parameters" />
       <module name="jt-sso" options="-parameters" />
       <module name="springboot-1-hello" options="-parameters" />
       <module name="springboot-2-mybatis" options="-parameters" />

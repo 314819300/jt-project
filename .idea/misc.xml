@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/springboot-2-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/jt-sso/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-3-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/jt-cart/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,5 +1,5 @@
 server:
-    port: 8093
+    port: 8094
     servlet:
         context-path: /
 spring:
@@ -21,7 +21,7 @@ spring:
 
 #mybatis-plush配置
 mybatis-plus:
-    type-aliases-package: com.jt.sso.pojo
+    type-aliases-package: com.jt.cart.pojo
     mapper-locations: classpath:/mybatis/mappers/*.xml
     configuration:
         map-underscore-to-camel-case: true  #自动开启驼峰规则映射

@@ -11,6 +11,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain=true)
 @TableName("tb_cart")
 public class Cart extends BasePojo{
+	private static final long serialVersionUID = 2826410192823789829L;
 	@TableId(type=IdType.AUTO)
 	private Long id;
 	private Long userId;

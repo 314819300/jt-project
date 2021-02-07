@@ -21,4 +21,9 @@ public class TestRedisCluster {
 		jedisCluster.set("1810", "springboot整合redis成功");
 		System.out.println(jedisCluster.get("1810"));
 	}
+
+	@Test
+	public void testToken() {
+		System.out.println(jedisCluster.get("1dcd7434fe34e3db2f76592c092a8563"));
+	}
 }
