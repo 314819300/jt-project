@@ -1,17 +1,17 @@
-package com.jt.cart.service;
+package com.jt.web.service;
 
-import com.jt.cart.pojo.Cart;
+import com.jt.common.po.Cart;
 
 import java.util.List;
 
 /**
  * @author wangning
- * @create 2021-02-07 15:42
+ * @create 2021-02-07 15:52
  */
 public interface CartService {
 	List<Cart> findCartListByUserId(Long userId);
 
-	void updateCartNum(Cart cart);
+	void updateCart(Cart cart);
 
 	void saveCart(Cart cart);
 
