@@ -28,4 +28,17 @@
         <property name="maxUploadSize" value="1048576"/>
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
+
+    <!--配置拦截器
+        (mapping+, exclude-mapping*, (bean | ref))
+        cart**  表示拦截多级路径
+        cart*   表示拦截cart下的一级目录
+    -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/cart/**"/>
+            <mvc:mapping path="/order/**"/>
+            <bean class="com.jt.web.interceptor.UserInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

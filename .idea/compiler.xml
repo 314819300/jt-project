@@ -15,12 +15,14 @@
         <module name="jt-web" />
         <module name="springboot-1-hello" />
         <module name="jt-common" />
+        <module name="jt-order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="jt-cart" target="1.8" />
       <module name="jt-common" target="1.8" />
       <module name="jt-manage" target="1.8" />
+      <module name="jt-order" target="1.8" />
       <module name="jt-parent" target="1.8" />
       <module name="jt-sso" target="1.8" />
       <module name="jt-web" target="1.8" />
@@ -32,6 +34,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="jt-cart" options="-parameters" />
+      <module name="jt-order" options="-parameters" />
       <module name="jt-sso" options="-parameters" />
       <module name="springboot-1-hello" options="-parameters" />
       <module name="springboot-2-mybatis" options="-parameters" />
