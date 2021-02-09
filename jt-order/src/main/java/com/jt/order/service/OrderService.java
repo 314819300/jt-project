@@ -10,4 +10,7 @@ public interface OrderService {
 	String saveOrder(Order order);
 
 	Order findOrderById(String orderId);
+
+	void updateOrderStatus();
+
 }

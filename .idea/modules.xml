@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/demo-quartzExpress/demo-quartzExpress.iml" filepath="$PROJECT_DIR$/demo-quartzExpress/demo-quartzExpress.iml" />
       <module fileurl="file://$PROJECT_DIR$/jt-cart/jt-cart.iml" filepath="$PROJECT_DIR$/jt-cart/jt-cart.iml" />
       <module fileurl="file://$PROJECT_DIR$/jt-common/jt-common.iml" filepath="$PROJECT_DIR$/jt-common/jt-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/jt-manage/jt-manage.iml" filepath="$PROJECT_DIR$/jt-manage/jt-manage.iml" />
