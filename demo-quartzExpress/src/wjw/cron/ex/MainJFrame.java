@@ -248,10 +248,10 @@ public class MainJFrame extends javax.swing.JFrame {
     jButton_Make = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-    setTitle("Quartz±í´ïÊ½Éú³ÉÆ÷(wjw465150@gmail.com)");
+    setTitle("Quartzè¡¨è¾¾å¼ç”Ÿæˆå™¨(wjw465150@gmail.com)");
     setResizable(false);
 
-    jTabbedPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "ÈÕÆÚ,Ê±¼ä"));
+    jTabbedPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "ï¿½ï¿½ï¿½ï¿½,Ê±ï¿½ï¿½"));
 
     jLabel9.setText("From");
 
@@ -1655,7 +1655,7 @@ public class MainJFrame extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ExitActionPerformed
-      //ÍË³öÏµÍ³
+      //ï¿½Ë³ï¿½ÏµÍ³
       this.dispose();
       System.exit(0);
     }//GEN-LAST:event_jButton_ExitActionPerformed
@@ -1683,13 +1683,13 @@ public class MainJFrame extends javax.swing.JFrame {
         jTF_Cron_Month.setText(exp.getMonthsExp());
         jTF_Cron_Week.setText(exp.getDaysOfWeekExp());
 
-        //·ÖÖÓ
+        //ï¿½ï¿½ï¿½ï¿½
         for (JCheckBox cb : jCB_MU_Map.values()) {
           cb.setSelected(false);
         }
         Set set = exp.getMinutesSet();
         Iterator itr = set.iterator();
-        if (set.contains(CronExpressionEx.ALL_SPEC)) {  //ÊÇ'*'
+        if (set.contains(CronExpressionEx.ALL_SPEC)) {  //ï¿½ï¿½'*'
           jRB_MU_Loop.setSelected(true);
           sp_MU_From_Model.setValue(0);
           sp_MU_Every_Model.setValue(1);
@@ -1711,13 +1711,13 @@ public class MainJFrame extends javax.swing.JFrame {
           }
         }
 
-        //Ê±¼ä
+        //Ê±ï¿½ï¿½
         for (JCheckBox cb : jCB_HH_Map.values()) {
           cb.setSelected(false);
         }
         set = exp.getHoursSet();
         itr = set.iterator();
-        if (set.contains(CronExpressionEx.ALL_SPEC)) {  //ÊÇ'*'
+        if (set.contains(CronExpressionEx.ALL_SPEC)) {  //ï¿½ï¿½'*'
           jRB_HH_Every.setSelected(true);
         } else {
           jRB_HH_Assign.setSelected(true);
@@ -1728,15 +1728,15 @@ public class MainJFrame extends javax.swing.JFrame {
           }
         }
 
-        //Ìì
+        //ï¿½ï¿½
         for (JCheckBox cb : jCB_DD_Map.values()) {
           cb.setSelected(false);
         }
         set = exp.getDaysOfMonthSet();
         itr = set.iterator();
-        if (set.contains(CronExpressionEx.NO_SPEC_INT)) {  //ÊÇ'?'
+        if (set.contains(CronExpressionEx.NO_SPEC_INT)) {  //ï¿½ï¿½'?'
           //
-        } else if (set.contains(CronExpressionEx.ALL_SPEC)) {  //ÊÇ'*'
+        } else if (set.contains(CronExpressionEx.ALL_SPEC)) {  //ï¿½ï¿½'*'
           jRB_DD_Every.setSelected(true);
         } else {
           jRB_DD_Assign.setSelected(true);
@@ -1747,13 +1747,13 @@ public class MainJFrame extends javax.swing.JFrame {
           }
         }
 
-        //ÔÂ
+        //ï¿½ï¿½
         for (JCheckBox cb : jCB_MM_Map.values()) {
           cb.setSelected(false);
         }
         set = exp.getMonthsSet();
         itr = set.iterator();
-        if (set.contains(CronExpressionEx.ALL_SPEC)) {  //ÊÇ'*'
+        if (set.contains(CronExpressionEx.ALL_SPEC)) {  //ï¿½ï¿½'*'
           jRB_MM_Every.setSelected(true);
         } else {
           jRB_MM_Assign.setSelected(true);
@@ -1764,16 +1764,16 @@ public class MainJFrame extends javax.swing.JFrame {
           }
         }
 
-        //Àñ°İ
+        //ï¿½ï¿½ï¿½
         for (JCheckBox cb : jCB_WK_Map.values()) {
           cb.setSelected(false);
         }
         jCB_WK_Use.setSelected(true);
         set = exp.getDaysOfWeekSet();
         itr = set.iterator();
-        if (set.contains(CronExpressionEx.NO_SPEC_INT)) {  //ÊÇ'?'
+        if (set.contains(CronExpressionEx.NO_SPEC_INT)) {  //ï¿½ï¿½'?'
           jCB_WK_Use.setSelected(false);
-        } else if (set.contains(CronExpressionEx.ALL_SPEC)) {  //ÊÇ'*'
+        } else if (set.contains(CronExpressionEx.ALL_SPEC)) {  //ï¿½ï¿½'*'
           jCB_WK_Use.setSelected(true);
           jRB_WK_Every.setSelected(true);
         } else {
@@ -1788,12 +1788,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
       } catch (Throwable ex) {
         //ex.printStackTrace();
-        JOptionPane.showMessageDialog(this, "½âÎöCron±í´ïÊ½·¢Éú´íÎó:" + ex);
+        JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½ï¿½Cronï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:" + ex);
       }
     }//GEN-LAST:event_jButton_ParseActionPerformed
 
     private void jButton_CopyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CopyActionPerformed
-      //¸´ÖÆCron±í´ïÊ½µ½¼ôÇĞ°å
+      //ï¿½ï¿½ï¿½ï¿½Cronï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ°ï¿½
       jTF_Cron_Exp.selectAll();
       jTF_Cron_Exp.copy();
     }//GEN-LAST:event_jButton_CopyActionPerformed
@@ -1808,7 +1808,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jCB_WK_UseItemStateChanged
 
     private void jButton_MakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_MakeActionPerformed
-      //Éú³ÉCron±í´ïÊ½
+      //ï¿½ï¿½ï¿½ï¿½Cronï¿½ï¿½ï¿½Ê½
       try {
         jTF_Cron_Second.setText("0");
 
@@ -1829,7 +1829,7 @@ public class MainJFrame extends javax.swing.JFrame {
           }
           jTF_Cron_Minute.setText(buf.toString());
           if (jTF_Cron_Minute.getText().length() == 0) {
-            throw new VerifyError("Ã»ÓĞÖ¸¶¨·ÖÖÓ!");
+            throw new VerifyError("Ã»ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!");
           }
         }
 
@@ -1850,7 +1850,7 @@ public class MainJFrame extends javax.swing.JFrame {
           }
           jTF_Cron_Hour.setText(buf.toString());
           if (jTF_Cron_Hour.getText().length() == 0) {
-            throw new VerifyError("Ã»ÓĞÖ¸¶¨Ğ¡Ê±!");
+            throw new VerifyError("Ã»ï¿½ï¿½Ö¸ï¿½ï¿½Ğ¡Ê±!");
           }
         }
 
@@ -1873,7 +1873,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
             jTF_Cron_Week.setText(buf.toString());
             if (jTF_Cron_Week.getText().length() == 0) {
-              throw new VerifyError("Ã»ÓĞÖ¸¶¨Àñ°İ!");
+              throw new VerifyError("Ã»ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½!");
             }
 
           }
@@ -1896,7 +1896,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
             jTF_Cron_Day.setText(buf.toString());
             if (jTF_Cron_Day.getText().length() == 0) {
-              throw new VerifyError("Ã»ÓĞÖ¸¶¨Ìì!");
+              throw new VerifyError("Ã»ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½!");
             }
           }
         }
@@ -1918,7 +1918,7 @@ public class MainJFrame extends javax.swing.JFrame {
           }
           jTF_Cron_Month.setText(buf.toString());
           if (jTF_Cron_Month.getText().length() == 0) {
-            throw new VerifyError("Ã»ÓĞÖ¸¶¨ÔÂ·İ!");
+            throw new VerifyError("Ã»ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Â·ï¿½!");
           }
         }
 
@@ -1938,7 +1938,7 @@ public class MainJFrame extends javax.swing.JFrame {
           dd = new java.util.Date(dd.getTime() + 1000);
         }
       } catch (Throwable ex) {
-        JOptionPane.showMessageDialog(this, "Éú³ÉCron±í´ïÊ½·¢Éú´íÎó:" + ex);
+        JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½ï¿½Cronï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:" + ex);
       }
 
     }//GEN-LAST:event_jButton_MakeActionPerformed

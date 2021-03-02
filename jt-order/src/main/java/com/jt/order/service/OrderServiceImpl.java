@@ -1,6 +1,7 @@
 package com.jt.order.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.jt.order.mapper.OrderItemMapper;
 import com.jt.order.mapper.OrderMapper;
 import com.jt.order.mapper.OrderShippingMapper;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -81,8 +83,24 @@ public class OrderServiceImpl implements OrderService {
 		return order;
 	}
 
+	/**
+	 * 定时关闭超时的任务
+	 * 当前时间-创建时间>30分钟 1-未支付
+	 * 当前时间 - 30分钟 > 创建时间
+	 */
 	@Override
 	public void updateOrderStatus() {
+		//设定30分钟超时
+		Calendar calendar = Calendar.getInstance();//获取的是当前时间
+		calendar.add(Calendar.MINUTE, -30);
+		Date date = calendar.getTime();
+		Order tempOrder = new Order();
+		tempOrder.setStatus(6);
+		tempOrder.setUpdated(new Date());
+		UpdateWrapper<Order> updateWrapper = new UpdateWrapper<>();
+//		当前时间-创建时间>30分钟 1-未支付
+		updateWrapper.eq("status", 1).lt("created", date);
+		orderMapper.update(tempOrder, updateWrapper);
 
 	}
 }
